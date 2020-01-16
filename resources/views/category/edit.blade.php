@@ -1,5 +1,5 @@
 @extends('layouts.home')
-@section('sub-title','Tambah Kategori')
+@section('sub-title','Edit Kategori')
 @section('content')
 
     @if (count($errors)>0)
@@ -18,14 +18,15 @@
         </div>
     @endif
 
-    <form action="{{ route('category.store') }}" method="post">
+    <form action="{{ route('category.update', $category->id) }}" method="post">
         @csrf
+        @method('patch')
         <div class="form-group">
             <label for="">Kategori</label>
-            <input type="text" class="form-control" name="name" id="">
+            <input type="text" class="form-control" name="name" value="{{ $category->name }}">
         </div>
         <div class="form-group">
-            <button class="btn btn-primary">Simpan Kategori</button>
+            <button class="btn btn-primary">Update Kategori</button>
         </div>
     </form>
 

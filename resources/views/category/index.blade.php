@@ -2,6 +2,15 @@
 @section('sub-title','Kategori')
 @section('content')
 
+    @if (Session::has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ Session('success') }}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
     <a href="{{ route('category.create') }}" class="btn btn-info">Tambah Kategori</a><br><br>
 
         <table class="table table-hover">
@@ -18,8 +27,12 @@
                     <td>{{ $result + $category->firstitem() }}</td>
                     <td>{{ $hasil->name }}</td>
                     <td>
-                        <a href="" class="btn btn-primary">Edit</a>
-                        <a href="" class="btn btn-danger">Delete</a>
+                        <form action="{{ route('category.destroy', $hasil->id) }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <a href="{{ route('category.edit', $hasil->id) }}" class="btn btn-primary">Edit</a>
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach

@@ -45,7 +45,7 @@ class CategoryController extends Controller
             'name' => $request->name,
             'slug' => Str::slug($request->name),
         ]);
-        return redirect()->back()->with('success','Kategori Berhasil Disimpan');
+        return redirect()->back()->with('success','Kategori Berhasil di Simpan');
     }
 
     /**
@@ -67,7 +67,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::findorfail($id);
+        return view('category.edit', compact('category'));
     }
 
     /**
@@ -79,7 +80,18 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|min:5',
+        ]);
+
+        $category_data = [
+            'name' => $request->name,
+            'slug' => Str::slug($request->name)
+        ];
+
+        Category::whereId($id)->update($category_data);
+
+        return redirect()->route('category.index')->with('success','Data Berhasil di Update');
     }
 
     /**
@@ -90,6 +102,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::findorfail($id);
+        $category->delete();
+
+        return redirect()->back()->with('success','Data Berhasil di Hapus');
     }
 }

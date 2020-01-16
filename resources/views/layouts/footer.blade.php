@@ -22,6 +22,9 @@
 <!-- JS Libraies -->
 
 <!-- Page Specific JS File -->
+<script>
+    $('.alert').alert()
+</script>
 
 <!-- Template JS File -->
 <script src="{{ asset('assets/js/scripts.js') }}"></script>
