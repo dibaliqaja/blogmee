@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::resource('/category','CategoryController');
+Route::resource('/tag','TagController');
