@@ -1,5 +1,5 @@
 @extends('layouts_template.home')
-@section('sub-title','Tags')
+@section('sub-title','Users')
 @section('content')
 
     @if (Session::has('success'))
@@ -11,26 +11,28 @@
         </div>
     @endif
 
-    <a href="{{ route('tag.create') }}" class="btn btn-info">Tambah Tag</a><br><br>
+    <a href="{{ route('user.create') }}" class="btn btn-info">Tambah User</a><br><br>
 
         <table class="table table-hover">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Nama Tag</th>
+                    <th>Nama Pengguna</th>
+                    <th>Email</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($tag as $result => $hasil)
+                @foreach ($user as $result => $hasil)
                 <tr>
-                    <td>{{ $result + $tag->firstitem() }}</td>
+                    <td>{{ $result + $user->firstitem() }}</td>
                     <td>{{ $hasil->name }}</td>
+                    <td>{{ $hasil->email }}</td>
                     <td>
-                        <form action="{{ route('tag.destroy', $hasil->id) }}" method="post">
+                        <form action="{{ route('user.destroy', $hasil->id) }}" method="post">
                             @csrf
                             @method('delete')
-                            <a href="{{ route('tag.edit', $hasil->id) }}" class="btn btn-primary">Edit</a>
+                            <a href="{{ route('user.edit', $hasil->id) }}" class="btn btn-primary">Edit</a>
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
                     </td>
@@ -39,6 +41,6 @@
             </tbody>
         </table>
 
-        {{ $tag->links() }}
+        {{ $user->links() }}
 
 @endsection
