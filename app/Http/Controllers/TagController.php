@@ -26,7 +26,7 @@ class TagController extends Controller
      */
     public function create()
     {
-        return view('category.create');
+        return view('tag.create');
     }
 
     /**

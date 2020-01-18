@@ -1,4 +1,4 @@
-@extends('layouts.home')
+@extends('layouts_template.home')
 @section('sub-title','Edit Tag')
 @section('content')
 

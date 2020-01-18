@@ -9,6 +9,7 @@
      <!-- General CSS Files -->
      <link rel="stylesheet" href="{{ asset('assets/modules/bootstrap/css/bootstrap.min.css') }}">
      <link rel="stylesheet" href="{{ asset('assets/modules/fontawesome/css/all.min.css') }}">
+     <link rel="stylesheet" href="{{ asset('assets/modules/select2/dist/css/select2.min.css') }}">
 
      <!-- CSS Libraries -->
 
@@ -63,7 +64,7 @@
                 </ul>
             </nav>
 
-            @include('layouts.sidebar')
+            @include('layouts_template.sidebar')
 
             <!-- Main Content -->
             <div class="main-content">
@@ -77,5 +78,5 @@
                 </section>
             </div>
 
-            @include('layouts.footer')
+            @include('layouts_template.footer')
 
