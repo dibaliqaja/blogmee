@@ -28,7 +28,6 @@
         <div class="form-group">
             <label for="">Kategori</label>
             <select class="form-control select2" name="category_id" id="">
-                {{-- <option value="" holder>Pilih Kategori</option> --}}
                 @foreach ($category as $result)
                 <option value="{{ $result->id }}"
                     @if ($result->id == $post->category_id)
@@ -41,7 +40,6 @@
         <div class="form-group">
             <label for="">Tag</label>
             <select class="form-control select2" multiple="" name="tags[]" id="">
-                {{-- <option value="" holder>Pilih Tags</option> --}}
                 @foreach ($tags as $tag)
                 <option value="{{ $tag->id }}"
                     @foreach($post->tags as $item)

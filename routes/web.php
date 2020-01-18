@@ -12,9 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('index');
-})->name('dashboard');
+    return view('welcome');
+});
 
-Route::resource('/category','CategoryController');
-Route::resource('/tag','TagController');
-Route::resource('/post','PostController');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('/category','CategoryController');
+    Route::resource('/tag','TagController');
+    Route::resource('/post','PostController');
+});
+
+Auth::routes();
