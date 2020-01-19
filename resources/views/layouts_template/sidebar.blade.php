@@ -1,10 +1,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="index.html">Blog Mee</a>
+            <a href="/">BlogMee</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="index.html">BM</a>
+            <a href="/">BM</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
