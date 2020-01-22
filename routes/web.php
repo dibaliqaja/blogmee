@@ -16,6 +16,7 @@
 // });
 
 Route::get('/','BlogController@index');
+Route::get('/isipost/{slug}','BlogController@isiblog')->name('blog.isi');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');

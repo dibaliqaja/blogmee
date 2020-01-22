@@ -12,7 +12,7 @@
     @endif
 
     <a href="{{ route('post.create') }}" class="btn btn-info">Tambah Post</a><br><br>
-
+        
         <table class="table table-hover">
             <thead>
                 <tr>
