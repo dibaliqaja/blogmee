@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
@@ -15,8 +16,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::paginate(10);
-        return view('category.index', compact('category'));
+        $category = Category::where('users_id', auth()->id())->paginate(10);
+        $us = Auth::user()->id;
+        return view('category.index', compact('category','us'));
     }
 
     /**
@@ -44,6 +46,7 @@ class CategoryController extends Controller
         $category = Category::create([
             'name' => $request->name,
             'slug' => Str::slug($request->name),
+            'users_id'    => Auth::id(),
         ]);
         return redirect()->back()->with('success','Kategori Berhasil di Simpan');
     }
@@ -86,7 +89,8 @@ class CategoryController extends Controller
 
         $category_data = [
             'name' => $request->name,
-            'slug' => Str::slug($request->name)
+            'slug' => Str::slug($request->name),
+            'users_id'    => Auth::id(),
         ];
 
         Category::whereId($id)->update($category_data);

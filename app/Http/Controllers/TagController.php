@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Tags;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class TagController extends Controller
 {
@@ -15,8 +16,9 @@ class TagController extends Controller
      */
     public function index()
     {
-        $tag = Tags::paginate(10);
-        return view('tag.index', compact('tag'));
+        $tag = Tags::where('users_id', auth()->id())->paginate(10);
+        $us = Auth::user()->id;
+        return view('tag.index', compact('tag','us'));
     }
 
     /**
@@ -44,6 +46,7 @@ class TagController extends Controller
         $tag = Tags::create([
             'name' => $request->name,
             'slug' => Str::slug($request->name),
+            'users_id'    => Auth::id(),
         ]);
         return redirect()->back()->with('success','Kategori Berhasil di Simpan');
     }
@@ -86,7 +89,8 @@ class TagController extends Controller
 
         $tag_data = [
             'name' => $request->name,
-            'slug' => Str::slug($request->name)
+            'slug' => Str::slug($request->name),
+            'users_id'    => Auth::id(),
         ];
 
         Tags::whereId($id)->update($tag_data);

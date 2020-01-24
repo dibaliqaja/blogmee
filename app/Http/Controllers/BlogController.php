@@ -20,8 +20,13 @@ class BlogController extends Controller
     {
         $kategori = Category::all();
         $tag = Tags::all();
-        $data = Posts::where('slug', $slug)->get();
+        $data = $posts->where('slug', $slug)->get();
         $data_lagi = $posts->latest()->take(2)->get();
         return view('blog.isipost', compact('data','data_lagi','kategori','tag'));
+    }
+
+    public function about()
+    {
+        return view('blog.about');
     }
 }

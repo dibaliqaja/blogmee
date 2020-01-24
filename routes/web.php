@@ -16,6 +16,7 @@
 // });
 
 Route::get('/','BlogController@index');
+Route::get('/about','BlogController@about');
 Route::get('/isipost/{slug}','BlogController@isiblog')->name('blog.isi');
 
 Route::group(['middleware' => 'auth'], function () {
@@ -23,7 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('/category','CategoryController');
     Route::resource('/tag','TagController');
     Route::resource('/post','PostController');
-    Route::resource('/user','UserController');
+    // Route::resource('/user','UserController');
 });
 
 Auth::routes();

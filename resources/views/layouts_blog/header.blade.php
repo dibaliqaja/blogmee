@@ -37,8 +37,7 @@
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
                     @if (Auth::user())
                         <li class="nav-item"><a href="/home" class="nav-link">Dashboard</a></li>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

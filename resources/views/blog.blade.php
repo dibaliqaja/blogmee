@@ -1,6 +1,6 @@
 @include('layouts_blog.header')
 
-    <div class="hero-wrap js-fullheight" style="background-image: url({{ asset('front/images/image_9.jpg') }});"
+    <div class="hero-wrap js-fullheight" style="background-image: url({{ asset('front/images/guys.jpg') }});"
         data-stellar-background-ratio="0.5">
         <div class="overlay"></div>
         <div class="container">

@@ -5,12 +5,13 @@
                 <div class="col-md">
                     <div class="ftco-footer-widget mb-4">
                         <h2 class="logo"><a href="#">Blog<span>mee</span>.</a></h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                            there live the blind texts.</p>
+                        <p> Daftarkan dirimu, Posting yang ada di sekitarmu.
+                            Daftarkan dirimu, Posting yang ada di sekitarmu.
+                            Daftarkan dirimu, Posting yang ada di sekitarmu.</p>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                            <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                            <li class="ftco-animate"><a href="https://twitter.com/dibaliqaja"><span class="icon-twitter"></span></a></li>
+                            <li class="ftco-animate"><a href="https://www.facebook.com/dibaliqaja"><span class="icon-facebook"></span></a></li>
+                            <li class="ftco-animate"><a href="https://www.instagram.com/dibaliqaja/"><span class="icon-instagram"></span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -36,12 +37,10 @@
                     <div class="ftco-footer-widget mb-4 ml-md-5">
                         <h2 class="ftco-heading-2">Information</h2>
                         <ul class="list-unstyled">
-                            <li><a href="#" class="py-1 d-block"><span
+                            <li><a href="/" class="py-1 d-block"><span
                                         class="ion-ios-arrow-forward mr-3"></span>Home</a></li>
-                            <li><a href="#" class="py-1 d-block"><span
+                            <li><a href="/about" class="py-1 d-block"><span
                                         class="ion-ios-arrow-forward mr-3"></span>About</a></li>
-                            <li><a href="#" class="py-1 d-block"><span
-                                        class="ion-ios-arrow-forward mr-3"></span>Contact</a></li>
                         </ul>
                     </div>
                 </div>

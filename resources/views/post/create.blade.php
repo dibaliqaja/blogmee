@@ -43,7 +43,7 @@
         </div>
         <div class="form-group">
             <label for="">Konten</label>
-            <textarea class="form-control" name="content" id="" cols="30" rows="10"></textarea>
+            <textarea class="form-control" name="content" id="content"></textarea>
         </div>
         <div class="form-group">
             <label for="">Thumbnail</label>
@@ -53,5 +53,10 @@
             <button class="btn btn-primary">Simpan Post</button>
         </div>
     </form>
+
+<script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('content');
+</script>
 
 @endsection
