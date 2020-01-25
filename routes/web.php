@@ -18,6 +18,7 @@
 Route::get('/','BlogController@index');
 Route::get('/about','BlogController@about');
 Route::get('/isipost/{slug}','BlogController@isiblog')->name('blog.isi');
+Route::get('/list-category/{category}','BlogController@list_category')->name('blog.category');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/home', 'HomeController@index')->name('home');

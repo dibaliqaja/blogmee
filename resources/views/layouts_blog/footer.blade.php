@@ -20,7 +20,7 @@
                         <h2 class="ftco-heading-2">Latest Posts</h2>
                         @foreach ($data_lagi as $new_post)
                         <div class="block-21 mb-4 d-flex">
-                            <a class="img mr-4 rounded" style="background-image: url({{ $new_post->gambar }});"></a>
+                            <a class="img mr-4 rounded" style="background-image: url({{ asset('/'.$new_post->gambar)}});"></a>
                             <div class="text">
                                 <h3 class="heading"><a href="{{ route('blog.isi', $new_post->slug) }}">{{ $new_post->judul }}</a>
                                 </h3>
