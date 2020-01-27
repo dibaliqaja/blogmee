@@ -12,6 +12,7 @@
                             <li class="ftco-animate"><a href="https://twitter.com/dibaliqaja"><span class="icon-twitter"></span></a></li>
                             <li class="ftco-animate"><a href="https://www.facebook.com/dibaliqaja"><span class="icon-facebook"></span></a></li>
                             <li class="ftco-animate"><a href="https://www.instagram.com/dibaliqaja/"><span class="icon-instagram"></span></a></li>
+                            <li class="ftco-animate"><a href="https://www.github.com/dibaliqaja/blogmee"><span class="icon-github"></span></a></li>
                         </ul>
                     </div>
                 </div>

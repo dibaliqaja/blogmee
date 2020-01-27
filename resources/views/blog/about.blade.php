@@ -19,7 +19,7 @@
         <div class="row d-flex">
             <div class="col-md-6 d-flex">
                 <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-end"
-                    style="background-image: url({{ asset('front/images/me2.jpg') }});">
+                    style="background-image: url({{ asset('front/images/me.JPG') }});">
                 </div>
             </div>
             <div class="col-md-6 pl-md-5 py-md-5">
@@ -83,7 +83,7 @@
                                 <p class="mb-4">Dengan adanya blog ini saya lebih mudah untuk menulis dan membagikan cerita menjadi Frontend Developer saya. The big Thanks for you Iqbal!</p>
                                 <div class="d-flex align-items-center">
                                     <div class="user-img"
-                                        style="background-image: url({{ asset('front/images/me3.JPG') }})"></div>
+                                        style="background-image: url({{ asset('front/images/me2.jpg') }})"></div>
                                     <div class="pl-3">
                                         <p class="name">Adi Gumulung</p>
                                         <span class="position">Frontend Developer</span>
@@ -113,9 +113,9 @@
                                 <p class="mb-4">Dengan adanya ini saya bisa lebih mudah untuk membagikan cerita saya terlebih tentang User Experience</p>
                                 <div class="d-flex align-items-center">
                                     <div class="user-img"
-                                        style="background-image: url({{ asset('front/images/image_9.jpg') }})"></div>
+                                        style="background-image: url({{ asset('front/images/me3.JPG') }})"></div>
                                     <div class="pl-3">
-                                        <p class="name">Amanda Soya</p>
+                                        <p class="name">Gugun Arima</p>
                                         <span class="position">UX Designer</span>
                                     </div>
                                 </div>

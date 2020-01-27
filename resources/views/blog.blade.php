@@ -18,7 +18,7 @@
                                     Daftarkan dirimu, Posting yang ada di sekitarmu.
                                     Daftarkan dirimu, Posting yang ada di sekitarmu. </p>
                                 <div class="mouse">
-                                    <a href="#" class="mouse-icon">
+                                    <a href="#post" class="mouse-icon">
                                         <div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
                                     </a>
                                 </div>
@@ -33,7 +33,7 @@
     <section class="ftco-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12" id="post">
                     @foreach ($data as $new_post)
                     <div class="case">
                         <div class="row">
@@ -48,10 +48,8 @@
                                     </h2>
                                     <ul class="media-social list-unstyled">
                                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                                        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a>
-                                        </li>
-                                        <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a>
-                                        </li>
+                                        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                                        <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
                                     </ul>
                                     <div class="meta">
                                         <p class="mb-0"><a href="#">{{ $new_post->created_at->diffForHumans() }}</a></p>
