@@ -16,9 +16,8 @@ class TagController extends Controller
      */
     public function index()
     {
-        $tag = Tags::where('users_id', auth()->id())->paginate(10);
-        $us = Auth::user()->id;
-        return view('tag.index', compact('tag','us'));
+        $tag = Tags::paginate(10);
+        return view('tag.index', compact('tag'));
     }
 
     /**
@@ -40,13 +39,12 @@ class TagController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:20|min:5',
+            'name' => 'required|unique:tags|max:20|min:5',
         ]);
 
         $tag = Tags::create([
             'name' => $request->name,
             'slug' => Str::slug($request->name),
-            'users_id'    => Auth::id(),
         ]);
         return redirect()->back()->with('success','Kategori Berhasil di Simpan');
     }
@@ -84,13 +82,12 @@ class TagController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|max:20|min:5',
+            'name' => 'required|unique:tags|max:20|min:5',
         ]);
 
         $tag_data = [
             'name' => $request->name,
             'slug' => Str::slug($request->name),
-            'users_id'    => Auth::id(),
         ];
 
         Tags::whereId($id)->update($tag_data);

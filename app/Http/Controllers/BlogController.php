@@ -37,8 +37,9 @@ class BlogController extends Controller
         return view('blog.notpost', compact('data_lagi'));
     }
 
-    public function about()
+    public function about(Posts $posts)
     {
-        return view('blog.about');
+        $data_lagi = $posts->latest()->take(2)->get();
+        return view('blog.about', compact('data_lagi'));
     }
 }

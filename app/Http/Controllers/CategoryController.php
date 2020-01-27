@@ -16,9 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::where('users_id', auth()->id())->paginate(10);
-        $us = Auth::user()->id;
-        return view('category.index', compact('category','us'));
+        $category = Category::paginate(10);
+        return view('category.index', compact('category'));
     }
 
     /**
@@ -40,13 +39,12 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|min:5',
+            'name' => 'required|unique:category|min:5',
         ]);
 
         $category = Category::create([
             'name' => $request->name,
             'slug' => Str::slug($request->name),
-            'users_id'    => Auth::id(),
         ]);
         return redirect()->back()->with('success','Kategori Berhasil di Simpan');
     }
@@ -84,13 +82,12 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'name' => 'required|min:5',
+            'name' => 'required|unique:category|min:5',
         ]);
 
         $category_data = [
             'name' => $request->name,
             'slug' => Str::slug($request->name),
-            'users_id'    => Auth::id(),
         ];
 
         Category::whereId($id)->update($category_data);
@@ -106,9 +103,13 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::findorfail($id);
-        $category->delete();
+        try {
+            $category = Category::findorfail($id);
+            $category->delete();
 
-        return redirect()->back()->with('success','Data Berhasil di Hapus');
+            return redirect()->back()->with('success','Data Berhasil di Hapus');
+        } catch (\Illuminate\Database\QueryException $ex) {
+            return redirect()->back()->with('success','Kategori Masih digunakan dalam Postingan');
+        }
     }
 }
