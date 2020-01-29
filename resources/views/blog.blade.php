@@ -46,11 +46,11 @@
                                     <span class="subheading">{{ $new_post->category->name }}</span>
                                     <h2><a href="{{ route('blog.isi', $new_post->slug) }}">{{ $new_post->judul }}</a>
                                     </h2>
-                                    <ul class="media-social list-unstyled">
+                                    {{-- <ul class="media-social list-unstyled">
                                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                                         <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
                                         <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-                                    </ul>
+                                    </ul> --}}
                                     <div class="meta">
                                         <p class="mb-0"><a href="#">{{ $new_post->created_at->diffForHumans() }}</a></p>
                                     </div>

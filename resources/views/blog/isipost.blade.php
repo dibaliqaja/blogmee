@@ -40,6 +40,7 @@
                         <div class="about-author d-flex p-4 bg-light">
                             <div class="desc">
                               <h3>Posted By {{ $isipost->users->name }}</h3>
+                              <h6>{{ $isipost->created_at->diffForHumans() }}</h6>
                             </div>
                           </div>
 
@@ -48,10 +49,10 @@
                 </div> <!-- .col-md-8 -->
                 <div class="col-lg-4 sidebar pl-lg-5 ftco-animate">
                     <div class="sidebar-box">
-                        <form action="#" class="search-form">
+                        <form action="{{ route('blog.search') }}" method="GET" class="search-form">
                             <div class="form-group">
                                 <span class="icon icon-search"></span>
-                                <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+                                <input type="text" name="search" class="form-control" placeholder="Type a keyword and hit enter">
                             </div>
                         </form>
                     </div>
@@ -68,7 +69,7 @@
                         <h3>Tag Cloud</h3>
                         <div class="tagcloud">
                             @foreach ($tag as $item_tag)
-                                <a href="#" class="tag-cloud-link">{{ $item_tag->name }}</a>
+                                <a class="tag-cloud-link">{{ $item_tag->name }}</a>
                             @endforeach
                         </div>
                     </div>

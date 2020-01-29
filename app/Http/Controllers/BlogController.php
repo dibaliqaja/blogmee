@@ -42,4 +42,16 @@ class BlogController extends Controller
         $data_lagi = $posts->latest()->take(2)->get();
         return view('blog.about', compact('data_lagi'));
     }
+
+    public function search(Request $request, Posts $posts)
+    {
+        $isi = $posts->where('judul', $request->search)->orWhere('judul','like','%'.$request->search.'%')->count() >= 1;
+        if ($isi) {
+            $data_lagi = $posts->latest()->take(2)->get();
+            $data = $posts->where('judul', $request->search)->orWhere('judul','like','%'.$request->search.'%')->paginate(5);
+            return view('blog', compact('data_lagi','data'));
+        }
+        $data_lagi = $posts->latest()->take(2)->get();
+        return view('blog.notpost', compact('data_lagi'));
+    }
 }
